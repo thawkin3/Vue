@@ -31,7 +31,9 @@
                 v-for="(todo, index) in todos"
                 v-bind:key="todo.id"
                 v-bind:title="todo.title"
+                v-bind:editing="todo.editing"
                 v-on:remove="todos.splice(index, 1)"
+                v-on:edit="todo.editing = !todo.editing"
               ></li>
             </ul>
             <p class="noTasks" v-else>No tasks yet. Create some!</p>
